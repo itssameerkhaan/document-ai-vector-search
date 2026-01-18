@@ -1,8 +1,6 @@
 # Document AI Vector Search System
 
-This project allows users to upload any document, extract its content,
-store embeddings in a vector database (Chroma), and query the document
-using AI.
+This project is an AI-powered document intelligence system that allows users to upload any type of document, automatically extract its content, convert it into vector embeddings using AI, and store it in a high-performance vector database (Chroma). Users can then interact with their documents through a smart chat interface, asking natural language questions and receiving accurate, context-aware answers instantly.
 
 ## Features
 - Upload any document
