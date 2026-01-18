@@ -15,6 +15,7 @@ This project is an AI-powered document intelligence system that allows users to 
 - Flask
 - LangChain
 - LangGraph
+- Google Gemini API
 - ChromaDB
 - HTML
 
