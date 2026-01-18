@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+env/
+vectore_db/
+*.sqlite3
+.ipynb_checkpoints/

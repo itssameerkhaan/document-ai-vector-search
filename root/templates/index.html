@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload Center</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-upload-alt"></i> Document Upload Center</h1>
+            <p>Upload PDF, Images, Excel, CSV and more</p>
+        </header>
+
+        <!-- Upload Zone -->
+        <div class="upload-zone" id="uploadZone">
+            <i class="fas fa-file-upload"></i>
+            <h3>Drop files here or click to browse</h3>
+            <p>Supports: PDF, Images, Excel, CSV, Word documents</p>
+            <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.gif,.bmp,.webp,.xls,.xlsx,.csv,.doc,.docx">
+            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                Select Files
+            </button>
+        </div>
+
+        <!-- Fullscreen Loader -->
+        <div id="loaderOverlay" class="loader-overlay hidden">
+            <div class="loader"></div>
+            <p>Processing... Please wait</p>
+        </div>
+
+        <!-- Files List (Pending Upload) -->
+        <div class="files-container" id="filesContainer" style="display: none;">
+            <div class="files-header">
+                <h3>Files (<span id="fileCount">0</span>)</h3>
+                <div>
+                    <button class="btn btn-success"  id ="runBtn" onclick="uploadAll()">
+                        <i class="fas fa-upload"></i> Upload All
+                    </button>
+                    <button class="btn btn-danger" onclick="clearAll()">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </div>
+            <div class="files-list" id="filesList"></div>
+        </div>
+
+        <!-- Recently Uploaded (Shows for 10 seconds) -->
+        <div class="files-container recently-uploaded" id="recentlyUploadedContainer" style="display: none;">
+            <div class="files-header">
+                <h3><i class="fas fa-check-circle"></i> Recently Uploaded</h3>
+                <span class="upload-badge">Will disappear in <span id="countdown">10</span>s</span>
+            </div>
+            <div class="files-list" id="recentlyUploadedList"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>
